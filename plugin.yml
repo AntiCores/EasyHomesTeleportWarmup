@@ -1,0 +1,15 @@
+name: EasyHomesTeleportWarmup
+main: JackMD\EasyHomesTeleportWarmup\EasyHomesTeleportWarmup
+api: 3.0.0
+version: 1.0.0
+author: JackMD
+depend:
+- EasyHomes
+
+permissions:
+  eh_warmup:
+    default: false
+    children:
+      eh_warmup.bypass:
+        default: op
+        description: Allows you to bypass warmup timer

@@ -1,0 +1,10 @@
+# in seconds
+warmup-time: 5
+
+add:
+  effect: true
+
+lang:
+  stand-still: Please stand still while you are being teleported.
+  tp-success: Successfully teleported you to your home.
+  you-moved: Teleporting cancelled since you moved.
