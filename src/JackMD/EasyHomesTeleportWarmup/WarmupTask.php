@@ -7,7 +7,6 @@ use pocketmine\entity\Effect;
 use pocketmine\level\sound\EndermanTeleportSound;
 use pocketmine\Player;
 use pocketmine\scheduler\Task;
-use function is_null;
 
 class WarmupTask extends Task{
 
@@ -23,13 +22,9 @@ class WarmupTask extends Task{
 			/** @var Player $player */
 			$player = $warmupData[0];
 			$homeLocation = $warmupData[1];
+			$time = $warmupData[2];
 
-			if(is_null($time = $this->plugin->reduceTime($player))){
-				$this->plugin->removeWarmup($player);
-				continue;
-			}
-
-			if($time > 0){
+			if(time() < $time){
 				continue;
 			}
 

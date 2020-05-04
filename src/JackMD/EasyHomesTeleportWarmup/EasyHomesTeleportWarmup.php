@@ -51,7 +51,7 @@ class EasyHomesTeleportWarmup extends PluginBase implements Listener{
 		$this->warmup[$player->getLowerCaseName()] = [
 			$player,
 			$homeLocation,
-			$warmupTime
+			time() + $warmupTime
 		];
 
 		$player->sendMessage($config->getNested("stand-still", "Please stand still while you are being teleported."));
@@ -97,9 +97,5 @@ class EasyHomesTeleportWarmup extends PluginBase implements Listener{
 
 	public function removeWarmup(Player $player): void{
 		unset($this->warmup[$player->getLowerCaseName()]);
-	}
-
-	public function reduceTime(Player $player): ?int{
-		return isset($this->warmup[$player->getLowerCaseName()]) ? $this->warmup[$player->getLowerCaseName()][2]-- : null;
 	}
 }
